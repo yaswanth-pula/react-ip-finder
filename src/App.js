@@ -1,11 +1,14 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import NavHeader from "./NavHeader";
+import IpAddressComponent from "./IpAddressComponent";
 
 function App() {
   return (
-   <div>
-     <h1>Hello World</h1>
-   </div>
+    <div>
+      <NavHeader />
+      <IpAddressComponent />
+    </div>
   );
 }
 
