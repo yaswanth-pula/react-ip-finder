@@ -1,9 +1,9 @@
 import React from "react";
-function NavHeader() {
+const NavHeader = () => {
   return (
     <div>
-      <h2>Ip Finder</h2>
+      <h2 className="center-align-items header-background">Ip Finder</h2>
     </div>
   );
-}
+};
 export default NavHeader;

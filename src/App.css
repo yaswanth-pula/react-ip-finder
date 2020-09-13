@@ -1,3 +1,22 @@
 #my-chip {
   margin-right: 12px;
 }
+
+.center-align-items {
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+.header-background {
+  background-color: #0066b8;
+  color: #fee;
+}
+#my-container {
+  background-color: #eeeeee;
+}
+#copy-button {
+  background-color: #0066b8;
+  color: #fff;
+}

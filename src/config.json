@@ -1,5 +1,5 @@
 {
   "API_Config": {
-    "API_URL": "https://api64.ipify.org/?format=json"
+    "API_URL": "https://ipapi.co/json"
   }
 }
