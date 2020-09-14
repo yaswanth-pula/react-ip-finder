@@ -17,7 +17,7 @@ function DetailsComponent(props) {
           <strong>Details</strong>
         </AccordionSummary>
         <AccordionDetails>
-          <div>
+          <div className="center-align-items">
             {/* <h4>{props.api_data.country_name}</h4> */}
             <TableDataComponet parent_data={props.api_data} />
           </div>

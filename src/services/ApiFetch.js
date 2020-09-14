@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { API_Config } from "../config.json";
+import { API_Config } from "../config/config.json";
 // custom HOOK
 function useApiFetch() {
   //hooks
