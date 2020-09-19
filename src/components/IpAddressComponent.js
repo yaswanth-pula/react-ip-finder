@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Chip from "@material-ui/core/Chip";
-import { Button, Snackbar } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import Snackbar from "@material-ui/core/Snackbar";
 import DetailsComponent from "./DetailsComponent";
 import { useApiFetch } from "../services/ApiFetch";
-const IpAddressComponent = () => {
+const IpAddressComponent = (props) => {
   // Hooks
-  const [ip_data, isFetching] = useApiFetch();
+  const [ip_data, isFetching] = useApiFetch(props.ip);
   const [toastHook, setToastOpen] = useState(false);
   // Hooks
   // const [ipAddressHook, setIpAddress] = useState({
@@ -65,10 +66,10 @@ const IpAddressComponent = () => {
   // Main jsx code
   return (
     <div className="center-align-items">
-      <h2>Your Ip Address</h2>
-      <Chip id="my-chip" label={loadIpAddress()} />
+      <h2>Ip Address</h2>
+      <Chip label={loadIpAddress()} />
       <Button
-        id="copy-button"
+        id="button-style"
         variant="outlined"
         size="small"
         onClick={() => copyIpButtonClick()}
