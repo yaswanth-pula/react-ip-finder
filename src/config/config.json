@@ -1,0 +1,6 @@
+{
+  "API_Config": {
+    "API_URL": "https://ipapi.co/",
+    "RESPONSE_FORMAT": "json"
+  }
+}

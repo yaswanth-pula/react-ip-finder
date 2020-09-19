@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import Chip from "@material-ui/core/Chip";
-import { Button, Snackbar } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import Snackbar from "@material-ui/core/Snackbar";
 import DetailsComponent from "./DetailsComponent";
-import { useApiFetch } from "./services/ApiFetch";
-const IpAddressComponent = () => {
-  const [ip_data, isFetching] = useApiFetch();
+import { useApiFetch } from "../services/ApiFetch";
+const IpAddressComponent = (props) => {
+  // Hooks
+  const [ip_data, isFetching] = useApiFetch(props.ip);
+  const [toastHook, setToastOpen] = useState(false);
   // Hooks
   // const [ipAddressHook, setIpAddress] = useState({
   //   isFetching: true,
@@ -15,12 +18,8 @@ const IpAddressComponent = () => {
 
   // });
 
-  const [toastHook, setToastOpen] = useState(false);
-
   // // utility Functions
   function loadIpAddress() {
-    // console.log(count + " ip");
-    // count = count + 1;
     if (isFetching) {
       return <h2>Obtaining Ip Address...</h2>;
     } else {
@@ -28,29 +27,25 @@ const IpAddressComponent = () => {
     }
   }
   function loadDetailsComponent() {
-    // console.log(count + " Details");
-    // count = count + 1;
     if (!isFetching) {
       return <DetailsComponent api_data={ip_data} />;
     }
   }
 
   // copy button function
-
   function copyIpButtonClick() {
     // does not supporting on Http(Chrome Android )
-    navigator.clipboard
-      .writeText(ip_data.ip)
-      .then(() => {
-        // nothing to do..
-      })
-      .catch(console.error);
+    // navigator.clipboard
+    //   .writeText(ip_data.ip)
+    //   .then(() => {
+    //     setToastOpen(true);
+    //   })
+    //   .catch(console.error);
 
     // other trials
     // window.prompt("Copy to clipboard: Ctrl+C, Enter", ipAddressHook.ip);
-    // navigator.clipboardData("text/plain", ipAddressHook.ip);
 
-    // genric approach
+    // Genric approach
     let local_text_area = document.createElement("textarea");
     local_text_area.innerText = ip_data.ip;
     document.body.appendChild(local_text_area);
@@ -67,13 +62,14 @@ const IpAddressComponent = () => {
 
     setToastOpen(false);
   };
+
   // Main jsx code
   return (
     <div className="center-align-items">
-      <h2>Your Ip Address</h2>
-      <Chip id="my-chip" label={loadIpAddress()} />
+      <h2>Ip Address</h2>
+      <Chip label={loadIpAddress()} />
       <Button
-        id="copy-button"
+        id="button-style"
         variant="outlined"
         size="small"
         onClick={() => copyIpButtonClick()}

@@ -16,7 +16,18 @@
 #my-container {
   background-color: #eeeeee;
 }
-#copy-button {
+#button-style {
   background-color: #0066b8;
   color: #fff;
+  margin-left: 12px;
+}
+#search-lookup-paper {
+  padding: 10px;
+  align-items: center;
+}
+#search-icon-padding {
+  padding: 10;
+}
+.search-input {
+  margin-right: 12px;
 }
