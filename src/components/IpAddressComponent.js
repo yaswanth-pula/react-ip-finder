@@ -26,11 +26,11 @@ const IpAddressComponent = (props) => {
       return <h2>{ip_data.ip}</h2>;
     }
   }
-  function loadDetailsComponent() {
-    if (!isFetching) {
-      return <DetailsComponent api_data={ip_data} />;
-    }
-  }
+  // function loadDetailsComponent() {
+  //   if (!isFetching) {
+  //     return <DetailsComponent api_data={ip_data} />;
+  //   }
+  // }
 
   // copy button function
   function copyIpButtonClick() {
@@ -68,15 +68,16 @@ const IpAddressComponent = (props) => {
     <div className="center-align-items">
       <h2>Ip Address</h2>
       <Chip label={loadIpAddress()} />
-      <Button
-        id="button-style"
-        variant="outlined"
-        size="small"
-        onClick={() => copyIpButtonClick()}
-        disabled={isFetching}
-      >
-        COPY
-      </Button>
+      {!isFetching && (
+        <Button
+          id="button-style"
+          variant="outlined"
+          size="small"
+          onClick={() => copyIpButtonClick()}
+        >
+          COPY
+        </Button>
+      )}
       <Snackbar
         anchorOrigin={{
           vertical: "top",
@@ -87,7 +88,12 @@ const IpAddressComponent = (props) => {
         onClose={handleClose}
         message="IP Copied !"
       />
-      <div>{loadDetailsComponent()}</div>
+      <div>
+        {
+          //loadDetailsComponent()
+          !isFetching && <DetailsComponent api_data={ip_data} />
+        }
+      </div>
     </div>
   );
 };

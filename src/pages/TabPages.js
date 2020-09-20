@@ -13,7 +13,7 @@ const Tabpages = () => {
   return (
     <div id="tab-pages">
       <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} indicatorColor="secondary">
+        <Tabs value={value} onChange={handleChange}>
           <Tab label="Your Ip" />
           <Tab label="Ip LookUp" />
         </Tabs>
