@@ -12,7 +12,7 @@ function useApiFetch(ip) {
   async function fetchApi() {
     //console.log("Api Call");
     const API_URL = API_Config.API_URL + lookup_ip + API_Config.RESPONSE_FORMAT;
-    console.log(API_URL);
+    // console.log(API_URL);
     const api_response = await fetch(API_URL);
     const json_data = await api_response.json();
     setIpData(json_data);
