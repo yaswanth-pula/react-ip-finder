@@ -15,19 +15,19 @@ const TableDataComponet = (props) => {
           <TableRowComponent
             row_key="ipCityRow"
             cell_1="City:"
-            cell_2={props.parent_data.city}
+            cell_2={props.parent_data.city || "Not Available"}
           />
           {/* Region of IP */}
           <TableRowComponent
             row_key="ipRegionRow"
             cell_1="Region:"
-            cell_2={props.parent_data.region}
+            cell_2={props.parent_data.region || "Not Available"}
           />
           {/* Country of IP */}
           <TableRowComponent
             row_key="ipCountryRow"
             cell_1="Country:"
-            cell_2={props.parent_data.country_name}
+            cell_2={props.parent_data.country_name || "Not Available"}
           />
           {/* Latitude & Longitude of Ip */}
 
@@ -35,14 +35,16 @@ const TableDataComponet = (props) => {
             row_key="ipLatLongRow"
             cell_1="Latitude / Longitude:"
             cell_2={
-              props.parent_data.latitude + " , " + props.parent_data.longitude
+              (props.parent_data.latitude || "Not Available") +
+              " , " +
+              (props.parent_data.longitude || "Not Available")
             }
           />
           {/* Isp of Ip */}
           <TableRowComponent
             row_key="ipIspRow"
             cell_1="ISP Provider:"
-            cell_2={props.parent_data.org}
+            cell_2={props.parent_data.org || "Not Available"}
           />
         </TableBody>
       </Table>

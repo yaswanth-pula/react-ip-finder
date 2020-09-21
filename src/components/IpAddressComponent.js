@@ -23,7 +23,7 @@ const IpAddressComponent = (props) => {
     if (isFetching) {
       return <h2>Obtaining Ip Address...</h2>;
     } else {
-      return <h2>{ip_data.ip}</h2>;
+      return <h3>{ip_data.ip}</h3>;
     }
   }
   // function loadDetailsComponent() {
