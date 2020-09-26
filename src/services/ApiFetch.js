@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { API_Config } from "../config/config.json";
 // custom HOOK
@@ -20,9 +19,13 @@ function useApiFetch(ip) {
   }
 
   //Effect
-  useEffect(() => {
-    fetchApi();
-  }, []);
+  useEffect(
+    () => {
+      fetchApi();
+    },
+    // eslint-disable-next-line
+    []
+  );
 
   return [ipData_hook, fetching];
 }
