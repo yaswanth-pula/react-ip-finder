@@ -37,6 +37,7 @@ const SearchLookup = () => {
             onChange={(event) => {
               setLookIp(event.target.value);
               setCanLoad(false);
+              setIsValidInput(true);
             }}
           />
           <Button
